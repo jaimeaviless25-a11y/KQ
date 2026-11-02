@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b0b78ygo36au2"]
+
+[ext_resource type="Script" uid="uid://blfr7vjpc0asd" path="res://Scripts/cartman.gd" id="1_txio2"]
+[ext_resource type="Texture2D" uid="uid://bfoqelrs5x2op" path="res://Sprites/cartman.png" id="2_u7u64"]
+[ext_resource type="AudioStream" uid="uid://c03ffmoe8ga7" path="res://Music & Sound/stupid-jew-eric-cartman_SwhcQNS.mp3" id="3_cchcn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caduu"]
+atlas = ExtResource("2_u7u64")
+region = Rect2(0, 0, 29, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qayen"]
+atlas = ExtResource("2_u7u64")
+region = Rect2(29, 0, 29, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8i1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caduu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qayen")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipsgg"]
+radius = 19.026299
+
+[node name="cartman" type="Area2D" unique_id=1386291860]
+script = ExtResource("1_txio2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1273115669]
+sprite_frames = SubResource("SpriteFrames_t8i1y")
+autoplay = "default"
+frame_progress = 0.64366585
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181086935]
+shape = SubResource("CircleShape2D_ipsgg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1367898904]
+stream = ExtResource("3_cchcn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cl8ynyxvtbet3"]
+
+[ext_resource type="Script" uid="uid://bddkohy7a4u0g" path="res://Scripts/bat.gd" id="1_jckqh"]
+[ext_resource type="Texture2D" uid="uid://b02b7xej2at7a" path="res://Sprites/Flying Demon 2D Pixel Art/Sprites/without_outline/FLYING.png" id="2_wt6c1"]
+[ext_resource type="AudioStream" uid="uid://8oee2vty5x1u" path="res://Music & Sound/labeling-j3w-k3w.mp3" id="3_50dnf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqh3e"]
+atlas = ExtResource("2_wt6c1")
+region = Rect2(0, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y36tb"]
+atlas = ExtResource("2_wt6c1")
+region = Rect2(79, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cawgt"]
+atlas = ExtResource("2_wt6c1")
+region = Rect2(158, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk7gk"]
+atlas = ExtResource("2_wt6c1")
+region = Rect2(237, 0, 79, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50dnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqh3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y36tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cawgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk7gk")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 7.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqh3e"]
+radius = 20.0
+
+[node name="bat" type="Area2D" unique_id=1978494054]
+script = ExtResource("1_jckqh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1044006934]
+sprite_frames = SubResource("SpriteFrames_50dnf")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.77263844
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=826256509]
+position = Vector2(-10, 3)
+shape = SubResource("CircleShape2D_mqh3e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1444714618]
+stream = ExtResource("3_50dnf")
+autoplay = true
+max_distance = 750.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

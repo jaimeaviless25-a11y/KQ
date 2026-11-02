@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://kqd8hltaap47"]
+
+[ext_resource type="Script" uid="uid://dnqb7efupylfo" path="res://Scripts/sign.gd" id="1_fmf1u"]
+[ext_resource type="Texture2D" uid="uid://bj8rwcxhc7qfx" path="res://Sprites/yahu trump.jpg" id="2_v8ien"]
+[ext_resource type="Texture2D" uid="uid://d0j00e7kvslie" path="res://Sprites/yahu watsap.jpg" id="3_u6bny"]
+[ext_resource type="Texture2D" uid="uid://cgnn26c0g5uso" path="res://Sprites/fentanyahu.jpeg" id="4_qwoug"]
+[ext_resource type="Texture2D" uid="uid://ckupo203poivn" path="res://Sprites/kirkanyahu.jpeg" id="5_bqbd3"]
+
+[node name="Sign" type="Node2D" unique_id=1163765765]
+script = ExtResource("1_fmf1u")
+textures = Array[Texture2D]([ExtResource("2_v8ien"), ExtResource("3_u6bny"), ExtResource("4_qwoug"), ExtResource("5_bqbd3")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1155981455]

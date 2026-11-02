@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dsygihq0achck"]
+
+[ext_resource type="Texture2D" uid="uid://k7l6om3icsl1" path="res://Sprites/Nazi_Swastika.svg.png" id="1_4wt8x"]
+[ext_resource type="Script" uid="uid://dw3mw7reyw07v" path="res://Scripts/hitler_spawner.gd" id="1_s6sso"]
+[ext_resource type="AudioStream" uid="uid://coi2p0h21iryu" path="res://Music & Sound/Voicy_German Soldier's Song - _Erika_ (with English Subtitles).mp3" id="3_2w3hf"]
+
+[node name="HitlerSpawner" type="Node2D" unique_id=829245341]
+position = Vector2(100, 0)
+script = ExtResource("1_s6sso")
+
+[node name="Timer" type="Timer" parent="." unique_id=349058332]
+wait_time = 5.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2026231044]
+position = Vector2(-100, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_4wt8x")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1681997835]
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=235561309]
+position = Vector2(0, 50)
+
+[node name="Marker2D3" type="Marker2D" parent="." unique_id=843793828]
+position = Vector2(0, 100)
+
+[node name="Marker2D4" type="Marker2D" parent="." unique_id=1702614388]
+position = Vector2(0, 150)
+
+[node name="Marker2D5" type="Marker2D" parent="." unique_id=1597212000]
+position = Vector2(0, 200)
+
+[node name="Marker2D6" type="Marker2D" parent="." unique_id=1679554615]
+position = Vector2(0, 250)
+
+[node name="Marker2D7" type="Marker2D" parent="." unique_id=1178784994]
+position = Vector2(0, 300)
+
+[node name="Marker2D8" type="Marker2D" parent="." unique_id=1390139578]
+position = Vector2(0, 350)
+
+[node name="Marker2D9" type="Marker2D" parent="." unique_id=1941009723]
+position = Vector2(0, 350)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=711128322]
+stream = ExtResource("3_2w3hf")
+volume_db = -5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

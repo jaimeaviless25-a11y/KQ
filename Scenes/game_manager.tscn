@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dk3sd52ixbxrd"]
+
+[ext_resource type="Script" uid="uid://b714v21nswky4" path="res://Scripts/game_manager.gd" id="1_oj352"]
+[ext_resource type="Texture2D" uid="uid://72f05cksydis" path="res://Sprites/coin_.png" id="2_e5fcp"]
+[ext_resource type="AudioStream" uid="uid://dal0et2j53wwo" path="res://Music & Sound/you-died-dark-souls.mp3" id="3_sq00h"]
+
+[node name="GameManager" type="Control" unique_id=976619180]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oj352")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=914052909]
+
+[node name="CoinLabel" type="Label" parent="CanvasLayer" unique_id=312465208]
+anchors_preset = -1
+anchor_left = 0.055000003
+anchor_top = 0.035
+anchor_right = 0.055000003
+anchor_bottom = 0.035
+offset_left = -20.8
+offset_top = -14.65
+offset_right = 19.2
+offset_bottom = 20.35
+theme_override_font_sizes/font_size = 25
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1367057146]
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1644224371]
+visible = false
+position = Vector2(25, 29.000002)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_e5fcp")
+hframes = 12
+
+[node name="JewDied" type="CanvasLayer" parent="." unique_id=86955389]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="JewDied" unique_id=132593224]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2782.0
+offset_top = -96.0
+offset_right = 2658.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="JewDied" unique_id=1579563254]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.5
+offset_top = -68.5
+offset_right = 219.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.2509804, 0.19215687, 1)
+theme_override_font_sizes/font_size = 100
+text = "JEW DIED"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="JewDied" unique_id=1735584351]
+stream = ExtResource("3_sq00h")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6huod5trknsq"]
+
+[ext_resource type="Script" uid="uid://c0fflra0ccyox" path="res://Scripts/hitler.gd" id="1_6bg7s"]
+[ext_resource type="Texture2D" uid="uid://bld1ascpko3qx" path="res://Sprites/adollf rizzler.jpg" id="2_6bg7s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h1eh2"]
+radius = 13.0
+height = 40.0
+
+[node name="hitler" type="Area2D" unique_id=1386291860]
+z_index = 50
+script = ExtResource("1_6bg7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=892301465]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_6bg7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181086935]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_h1eh2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

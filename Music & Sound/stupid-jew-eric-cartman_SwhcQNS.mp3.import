@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c03ffmoe8ga7"
+path="res://.godot/imported/stupid-jew-eric-cartman_SwhcQNS.mp3-c3cd002a048ff51824010ac93b685adb.mp3str"
+
+[deps]
+
+source_file="res://Music & Sound/stupid-jew-eric-cartman_SwhcQNS.mp3"
+dest_files=["res://.godot/imported/stupid-jew-eric-cartman_SwhcQNS.mp3-c3cd002a048ff51824010ac93b685adb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

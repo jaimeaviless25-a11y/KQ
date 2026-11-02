@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6lmeh77rc4g8"]
+
+[ext_resource type="Script" uid="uid://ck51me67v3wqq" path="res://Scripts/jew.gd" id="1_8rlx0"]
+[ext_resource type="Texture2D" uid="uid://1xj16ocqokr7" path="res://Sprites/Merchant.jpg" id="2_wsq77"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3g1t"]
+radius = 14.0
+height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rlx0"]
+size = Vector2(40, 55)
+
+[node name="Jew" type="CharacterBody2D" unique_id=1513596575 groups=["Jew"]]
+script = ExtResource("1_8rlx0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=890478237]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_wsq77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789782272]
+shape = SubResource("CapsuleShape2D_i3g1t")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=537459205]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1483363082]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_8rlx0")

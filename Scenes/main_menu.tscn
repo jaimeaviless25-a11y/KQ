@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cjhueyihnemd1"]
+
+[ext_resource type="Script" uid="uid://bsjce472bg83i" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://bpyheuyswy7jn" path="res://Sprites/Star_of_David.svg" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://ounj51gxtbck" path="res://Sprites/Menorah.svg" id="3_ce3w2"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=815630241]
+process_mode = 3
+layer = 100
+script = ExtResource("1_28flt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1692483727]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 150.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="Button" type="Button" parent="." unique_id=609462590]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -15.5
+offset_right = 23.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="Kosher Quest" type="Label" parent="." unique_id=2081704073]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "K    S H E R   Q U E S   "
+
+[node name="Sprite2D" type="Sprite2D" parent="Kosher Quest" unique_id=256236957]
+position = Vector2(117, 70)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_1ehe0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Kosher Quest" unique_id=1568792139]
+position = Vector2(976, 71.55)
+scale = Vector2(0.3, 0.26656446)
+texture = ExtResource("3_ce3w2")
+
+[node name="Coin Record" type="Label" parent="." unique_id=2025672621]
+offset_top = 200.0
+offset_right = 40.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 25
+
+[node name="BestTimeLabel" type="Label" parent="." unique_id=754521016]
+offset_top = 250.0
+offset_right = 40.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 25
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
